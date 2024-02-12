@@ -1,5 +1,7 @@
-Feature: Google Search
-    Scenario: Verify Google Search Functionality
-        Given I open the Google homepage
-        When I search for "Selenium"
-        Then I should see search results for "Selenium"
+Feature: Login
+    Scenario: Verify Login ok
+        Given I open the login Autoropage
+        When I put the user name "jsmith"
+        And  I put the password "Demo1234"
+        And  I click on login button
+        Then I should see the login page "Hello John Smith"

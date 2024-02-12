@@ -1,5 +1,7 @@
 package steps;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Assert;
 
 import io.cucumber.java.en.Given;
@@ -9,24 +11,33 @@ import pages.LoginPage;
 
 public class LoginSteps {
 
-    private LoginPage googleHomePage;
+    private LoginPage loginPage;
 
-    @Given("I open the Google homepage")
-    public void openGoogleHomePage(){
-        googleHomePage = new LoginPage(Hooks.getDriver());
-        googleHomePage.open();
-        Hooks.captureScreenshot("pass", "I open the Google homepage");
+    @Given("I open the login Autoropage")
+    public void openAutoroPage(){
+        loginPage = new LoginPage(Hooks.getDriver());
+        loginPage.openSite();
+        Hooks.captureScreenshot("pass", "I open the login Autoropage");
     }
-    
-    @When("I search for {string}")
-    public void searchKeyword(String keyword){
-        googleHomePage.search(keyword);
-        Hooks.captureScreenshot("pass", "I search for "+keyword);
-    }
+        @When("I put the user name {string}")
+    public void PutTheUserName(String userName) {
+         loginPage.loginUsuario(userName);
+        Hooks.captureScreenshot("pass", "I put the user name");
 
-    @Then("I should see search results for {string}")
-    public void verifySearchResults(String keyword) {
-       Assert.assertTrue(googleHomePage.getTitle().contains(keyword));
-       Hooks.captureScreenshot("pass", "I should see search results for "+keyword);
+    }
+        @When("I put the password {string}")
+    public void PutThePassword(String password) {
+        loginPage.loginSenha(password);
+        Hooks.captureScreenshot("pass", "I put the password");
+    }
+    @When("I click on login button")
+    public void ClickOnLoginButton() {
+        loginPage.clickLogin();
+        Hooks.captureScreenshot("pass", "I click on login button");
+    }
+    @Then("I should see the login page {string}")
+    public void ShouldSeeTheLoginPage(String textoValidacao) {
+       Assert.assertEquals(loginPage.getTextHelloJonhSmitString(),textoValidacao);
+       Hooks.captureScreenshot("pass", "I should see the login page");
     }
 }
