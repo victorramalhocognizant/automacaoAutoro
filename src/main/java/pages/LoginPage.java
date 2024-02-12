@@ -6,27 +6,32 @@ import org.openqa.selenium.WebDriver;
 
 public class LoginPage {
     private WebDriver driver;
-    private String searchBar = "//*[@id=\"APjFqb\"]";
-    private String loginButton = "//*[@id=\"gb\"]/div/div[2]/a";
+    private String userName = "//*[@id=\"uid\"]";
+    private String passward = "//*[@id=\"passw\"]";
+    private String botaoLogin = "//*[@id=\"login\"]/table/tbody/tr[3]/td[2]/input";
+    private String textoValidacao = "/html/body/table[2]/tbody/tr/td[2]/div/h1";
 
     public LoginPage(WebDriver driver){
         this.driver = driver;
     }
-    
-    public void open(){
-        driver.get("https://www.google.com");
+        public void openSite(){
+        driver.get("https://demo.testfire.net/login.jsp");
     }
-
-    public void search(String keyword){
-        driver.findElement(By.xpath(searchBar)).sendKeys(keyword);
-        driver.findElement(By.xpath(searchBar)).sendKeys(Keys.ENTER);
+    public void loginUsuario(String keyword){
+        driver.findElement(By.xpath(userName)).sendKeys("jsmith");
     }
-
+    public void loginSenha(String keyword){
+        driver.findElement(By.xpath(passward)).sendKeys("Demo1234");
+    }
     public void clickLogin(){
-        driver.findElement(By.xpath(loginButton)).click();
+        driver.findElement(By.xpath(botaoLogin)).click();
     }
-
     public String getTitle(){
         return driver.getTitle();
     }
+    public String getTextHelloJonhSmitString(){
+      return driver.findElement(By.xpath(textoValidacao)).getText();
+         
+}
+
 }
