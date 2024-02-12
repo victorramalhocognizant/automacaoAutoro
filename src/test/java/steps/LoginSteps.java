@@ -1,7 +1,5 @@
 package steps;
 
-import static org.junit.Assert.assertEquals;
-
 import org.junit.Assert;
 
 import io.cucumber.java.en.Given;
