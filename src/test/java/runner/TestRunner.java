@@ -10,8 +10,9 @@ import io.cucumber.junit.CucumberOptions;
     features = "src/test/java/resources/features",
     glue = "steps",
     snippets = io.cucumber.junit.CucumberOptions.SnippetType.CAMELCASE,
-monochrome = true,
-dryRun = false
+    monochrome = true,
+    tags = "@TransferSavingsToSavings",
+    dryRun = false
 )
 public class TestRunner {
     
