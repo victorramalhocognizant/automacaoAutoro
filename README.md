@@ -17,25 +17,35 @@ The objective of this project is to perform automated tests to ensure the qualit
 - Selenium WebDriver
 - Cucumber
 
+## Page Objects
+
+We follow the Page Object Model (POM) design pattern to create a structured and maintainable test automation framework. Page Objects help encapsulate the interaction with web elements on each page, making the code more readable and reducing duplication.
+
+## ExtentReports
+
+For reporting, we utilize **ExtentReports**, a powerful library that allows us to create beautiful, interactive, and detailed reports for our tests. With ExtentReports, we can add events, screenshots, tags, devices, authors, or any other relevant information to create descriptive and stunning reports. We have customized our reports to include essential details such as application under test, environment, machine information, and more.
 
 ## Installation and Execution
 
 
 1. Clone this repository:
+
+```bash
 git clone https://github.com/victorramalhocognizant/automacaoAutoro.git
+```
 
+3. Navigate to the project directory:
 
-2. Navigate to the project directory:
- 
+ ```bash
 cd automacaoAutoro
-
+```
 
 ## Contributors
 
 
-- Khaterin Palomino ([@khaterin-palomino](https://github.com/khaterin-palomino))
-- Victor Ramalho ([@victor-ramalho](https://github.com/victor-ramalho))
-- Karine Rodrigues ([@karine-rodrigues](https://github.com/karine-rodrigues))
-- Rodrigo Freitas ([@rodrigo-freitas](https://github.com/rodrigo-freitas))
+- Khaterin Palomino ([@KhatNunez](https://github.com/KhatNunez))
+- Victor Ramalho ([@victorramalhocognizant](https://github.com/victorramalhocognizant))
+- Karine Rodrigues ([@KarineAugusta21](https://github.com/KarineAugusta21))
+- Rodrigo Freitas ([@RodrigoCog](https://github.com/RodrigoCog))
 
 
