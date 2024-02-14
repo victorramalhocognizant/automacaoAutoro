@@ -10,8 +10,8 @@ public class LoginPage {
     private String passward = "//*[@id=\"passw\"]";
     private String botaoLogin = "//*[@id=\"login\"]/table/tbody/tr[3]/td[2]/input";
     private String textoValidacao = "/html/body/table[2]/tbody/tr/td[2]/div/h1";
+    private String textoSenhaIncorrecta = "//*[@id=\"_ctl0__ctl0_Content_Main_message\"]";
     private String textoUsuarioIncorreto = "/html/body/table/tbody/tr[2]/td[2]/div/h1";
-
 
     public LoginPage(WebDriver driver){
         this.driver = driver;
@@ -33,6 +33,10 @@ public class LoginPage {
     }
     public String getTextHelloJonhSmitString(){
       return driver.findElement(By.xpath(textoValidacao)).getText();
+    }
+
+    public String getTextLoginFailed(){
+    return driver.findElement(By.xpath(textoSenhaIncorrecta)).getText();   
     }
 
     public void logarUsuario(){

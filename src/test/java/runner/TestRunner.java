@@ -10,9 +10,10 @@ import io.cucumber.junit.CucumberOptions;
     features = "src/test/java/resources/features",
     glue = "steps",
     snippets = io.cucumber.junit.CucumberOptions.SnippetType.CAMELCASE,
-    tags = "@TransferCreditToChecking",
-    monochrome = true,
-    dryRun = false
+
+    tags = "@loginWithUserAndPasswordBlank",
+monochrome = true,
+dryRun = false
 )
 public class TestRunner {
     
