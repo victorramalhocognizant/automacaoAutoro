@@ -1,6 +1,7 @@
 package steps;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -14,12 +15,9 @@ public class TransferSteps {
     private TransferPage transferPage = new TransferPage(Hooks.getDriver());
 
     @Given("I am already logged in the system")
-        public void iAmAlreadyLoggedInTheSystem() {
+    public void iAmAlreadyLoggedInTheSystem() {
         loginPage = new LoginPage(Hooks.getDriver());
-        loginPage.openSite();
-        loginPage.loginUsuario("jsmith");
-        loginPage.loginSenha("Demo1234");
-        loginPage.clickLogin();
+        loginPage.logarUsuario();
     }
 
     @When("I click on transfer funds")
@@ -57,7 +55,33 @@ public class TransferSteps {
         Hooks.captureScreenshot("pass", "Then the system should show the popup mesenge From Account and To Account fields cannot be the same.");
     }
 
+    @When("I select in the field to account the Checking account")
+    public void iSelectInTheFieldToAccountTheCheckingAccount() {
+        transferPage.selecionarContaDestino(1);
+        Hooks.captureScreenshot("pass", "I select in the field to account the Checking account");
+    }
+    @When("I select in the field to account the Credit card account")
+    public void iSelectInTheFieldToAccountTheCreditCardAccount() {
+        transferPage.selecionarContaDestino(2);
+        Hooks.captureScreenshot("pass", "I select in the field to account the Credit card account");
+    }
 
+    @Then("the system should show the message of successful transfer")
+    public void theSystemShouldShowTheMessageOfSuccessfulTransfer() {
+        assertTrue(transferPage.validacaoTransfer());
+        Hooks.captureScreenshot("pass", "the system should show the message of successful transfer");
+    }
+    @When("I select in the field from account the Checking account")
+    public void iSelectInTheFieldFromAccountTheCheckingAccount() {
+        transferPage.selecionarContaDebitada(1);
+        Hooks.captureScreenshot("pass", "I select in the field from account the Checking account");
+    }
+
+    @When("I select in the field from account the Credit card account")
+    public void iSelectInTheFieldFromAccountTheCreditCardAccount() {
+        transferPage.selecionarContaDebitada(2);
+        Hooks.captureScreenshot("pass", "I select in the field from account the Credit card account");
+    }
 
 
 }
