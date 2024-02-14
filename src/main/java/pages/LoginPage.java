@@ -1,7 +1,7 @@
 package pages;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 public class LoginPage {
@@ -11,6 +11,7 @@ public class LoginPage {
     private String botaoLogin = "//*[@id=\"login\"]/table/tbody/tr[3]/td[2]/input";
     private String textoValidacao = "/html/body/table[2]/tbody/tr/td[2]/div/h1";
     private String textoSenhaIncorrecta = "//*[@id=\"_ctl0__ctl0_Content_Main_message\"]";
+    private String textoUsuarioIncorreto = "/html/body/table/tbody/tr[2]/td[2]/div/h1";
 
     public LoginPage(WebDriver driver){
         this.driver = driver;
@@ -33,7 +34,31 @@ public class LoginPage {
     public String getTextHelloJonhSmitString(){
       return driver.findElement(By.xpath(textoValidacao)).getText();
     }
+
     public String getTextLoginFailed(){
     return driver.findElement(By.xpath(textoSenhaIncorrecta)).getText();   
     }
+
+    public void logarUsuario(){
+        openSite();
+        loginUsuario("jsmith");
+        loginSenha("Demo1234");
+        clickLogin();
+    }
+         
+
+
+}
+public String getTextOnlineBankingLoginString(){
+  return driver.findElement(By.xpath(textoUsuarioIncorreto)).getText();
+
+}
+public String validaPopup(){
+    Alert popup = driver.switchTo().alert();
+  String textoPopup= popup.getText();
+  popup.accept();
+  return textoPopup;
+
+
+}
 }
