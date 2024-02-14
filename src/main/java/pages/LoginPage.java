@@ -33,7 +33,16 @@ public class LoginPage {
     }
     public String getTextHelloJonhSmitString(){
       return driver.findElement(By.xpath(textoValidacao)).getText();
+    }
+
+    public void logarUsuario(){
+        openSite();
+        loginUsuario("jsmith");
+        loginSenha("Demo1234");
+        clickLogin();
+    }
          
+
 
 }
 public String getTextOnlineBankingLoginString(){

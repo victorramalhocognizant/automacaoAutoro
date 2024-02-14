@@ -1,5 +1,6 @@
 Feature: Login
-@loginOK
+
+    @LoginOk
     Scenario: Verify Login ok
         Given I open the login Autoropage
         When I put the user name "jsmith"
