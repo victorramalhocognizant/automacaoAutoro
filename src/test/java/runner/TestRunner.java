@@ -10,8 +10,6 @@ import io.cucumber.junit.CucumberOptions;
     features = "src/test/java/resources/features",
     glue = "steps",
     snippets = io.cucumber.junit.CucumberOptions.SnippetType.CAMELCASE,
-
-    tags = "@loginWithUserAndPasswordBlank",
 monochrome = true,
 dryRun = false
 )
