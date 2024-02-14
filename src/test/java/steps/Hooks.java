@@ -27,6 +27,7 @@ public class Hooks {
     public void setUp(Scenario scenario){
         driver = BrowserProvider.createDriver(Browser.CHROME);
         extent = ExtentManager.getInstance();
+        driver.manage().window().maximize();
         test = extent.createTest(scenario.getName(), scenario.getName());
     }
 
