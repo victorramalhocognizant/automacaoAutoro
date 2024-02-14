@@ -1,21 +1,20 @@
 # Automated Testing Project - Autoro Mutual
 
-
-This project is a set of automated tests developed in Java with Selenium and Cucumber for the Autoro Mutual system. The test system used is a demo version hosted at [demo.testfire.net](https://demo.testfire.net/). The group responsible for the project consists of four people: Khaterin Palomino, Victor Ramalho, Karine Rodrigues, and Rodrigo Freitas.
+This project serves as a practice ground for applying knowledge in Selenium, Java, and Cucumber. It allows us to hone our skills during bench time. The test system used is a demo version hosted at [demo.testfire.net](https://demo.testfire.net/). The project team includes four members: Khaterin Palomino, Victor Ramalho, Karine Rodrigues, and Rodrigo Freitas.
 
 
 ## Project Objective
 
 
-The objective of this project is to perform automated tests to ensure the quality and stability of the Autoro Mutual system. We use the Acceptance Test-Driven Development (ATDD) technique with the Cucumber framework, allowing more effective communication between stakeholders and a living documentation of the system requirements.
+The primary objective of this project is to gain practical experience in automated testing by working with Selenium WebDriver, Java, and Cucumber. We aim to create robust and maintainable test scripts while ensuring the quality and stability of the Autoro Mutual system.
 
 
 ## Technologies Used
 
 
-- Java
-- Selenium WebDriver
-- Cucumber
+[![Java](https://img.shields.io/badge/-Java-007396?logo=java&logoColor=white&style=flat-square)](https://www.java.com/)
+ [![Selenium](https://img.shields.io/badge/-Selenium-43B02A?logo=selenium&logoColor=white&style=flat-square)](https://www.selenium.dev/)
+[![Cucumber](https://img.shields.io/badge/-Cucumber-23CE6B?logo=cucumber&logoColor=white&style=flat-square)](https://cucumber.io/)
 
 ## Page Objects
 
@@ -34,7 +33,7 @@ For reporting, we utilize **ExtentReports**, a powerful library that allows us t
 git clone https://github.com/victorramalhocognizant/automacaoAutoro.git
 ```
 
-3. Navigate to the project directory:
+2. Navigate to the project directory:
 
  ```bash
 cd automacaoAutoro
