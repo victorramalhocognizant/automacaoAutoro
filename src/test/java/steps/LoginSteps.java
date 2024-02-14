@@ -23,7 +23,6 @@ public class LoginSteps {
     public void PutTheUserName(String userName) {
          loginPage.loginUsuario(userName);
         Hooks.captureScreenshot("pass", "I put the user name");
-
     }
         @When("I put the password {string}")
     public void PutThePassword(String password) {
@@ -40,4 +39,10 @@ public class LoginSteps {
        Assert.assertEquals(loginPage.getTextHelloJonhSmitString(),textoValidacao);
        Hooks.captureScreenshot("pass", "I should see the login page");
     }
+    @Then("I should see the mensagem {string}")
+    public void ShouldSeeTheMensagem(String textoValidacao) {
+       Assert.assertEquals(loginPage.getTextLoginFailed(),textoValidacao);
+       Hooks.captureScreenshot("pass", "I should see the login page");
+    }
+    
 }
