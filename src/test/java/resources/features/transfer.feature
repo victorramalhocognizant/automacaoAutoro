@@ -11,7 +11,7 @@ Feature: Transfer
     Then the system should show the popup message "From Account and To Account fields cannot be the same."
 
   @TransferSavingsToChecking
-  Scenario: Transfer founds to the account Savings to Savings
+  Scenario: Transfer founds to the account Savings to Checking
     Given I am already logged in the system
     When I click on transfer funds
     And  I select in the field from account the Savings account
@@ -21,7 +21,7 @@ Feature: Transfer
     Then the system should show the message of successful transfer
 
   @TransferSavingsToCredit
-  Scenario: Transfer founds to the account Savings to Savings
+  Scenario: Transfer founds to the account Savings to Credit
     Given I am already logged in the system
     When I click on transfer funds
     And  I select in the field from account the Savings account
@@ -31,7 +31,7 @@ Feature: Transfer
     Then the system should show the message of successful transfer
 
   @TransferCheckingToSavings
-  Scenario: Transfer founds to the account Savings to Savings
+  Scenario: Transfer founds to the account Checking to Savings
     Given I am already logged in the system
     When I click on transfer funds
     And  I select in the field from account the Checking account
