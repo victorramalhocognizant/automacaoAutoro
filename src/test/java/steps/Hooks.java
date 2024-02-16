@@ -33,6 +33,11 @@ public class Hooks {
 
     @After
     public void tearDown(Scenario scenario){
+        if(scenario.isFailed()){
+            captureScreenshot("fail","final");
+        }else{
+            captureScreenshot("pass","final");
+        }
         extent.flush();
         driver.quit();
     }

@@ -26,7 +26,7 @@ public class TransferPage {
     public void selecionarContaDebitada(Integer index){
         WebElement selectElement = driver.findElement(By.xpath(campoContaDebitada));
         Select select = new Select(selectElement);
-        select.selectByIndex(0);
+        select.selectByIndex(index);
     }
 
     public void selecionarContaDestino(Integer index){

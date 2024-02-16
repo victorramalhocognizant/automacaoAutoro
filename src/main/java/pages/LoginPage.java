@@ -13,33 +13,38 @@ public class LoginPage {
     private String textoSenhaIncorrecta = "//*[@id=\"_ctl0__ctl0_Content_Main_message\"]";
     private String textoUsuarioIncorreto = "/html/body/table/tbody/tr[2]/td[2]/div/h1";
 
-    public LoginPage(WebDriver driver){
+    public LoginPage(WebDriver driver) {
         this.driver = driver;
     }
-    public void openSite(){
+    public void openSite() {
         driver.get("https://demo.testfire.net/login.jsp");
     }
-    public void loginUsuario(String keyword){
+
+    public void loginUsuario(String keyword) {
         driver.findElement(By.xpath(userName)).sendKeys(keyword);
     }
-    public void loginSenha(String keyword){
+
+    public void loginSenha(String keyword) {
         driver.findElement(By.xpath(passward)).sendKeys(keyword);
     }
-    public void clickLogin(){
+
+    public void clickLogin() {
         driver.findElement(By.xpath(botaoLogin)).click();
     }
-    public String getTitle(){
+
+    public String getTitle() {
         return driver.getTitle();
     }
-    public String getTextHelloJonhSmitString(){
-      return driver.findElement(By.xpath(textoValidacao)).getText();
+
+    public String getTextHelloJonhSmitString() {
+        return driver.findElement(By.xpath(textoValidacao)).getText();
     }
 
-    public String getTextLoginFailed(){
-    return driver.findElement(By.xpath(textoSenhaIncorrecta)).getText();   
+    public String getTextLoginFailed() {
+        return driver.findElement(By.xpath(textoSenhaIncorrecta)).getText();
     }
 
-    public void logarUsuario(){
+    public void logarUsuario() {
         openSite();
         loginUsuario("jsmith");
         loginSenha("Demo1234");
@@ -49,13 +54,13 @@ public class LoginPage {
     public String getTextOnlineBankingLoginString(){
      return driver.findElement(By.xpath(textoUsuarioIncorreto)).getText();
 
-}
-public String validaPopup(){
-    Alert popup = driver.switchTo().alert();
-  String textoPopup= popup.getText();
-  popup.accept();
-  return textoPopup;
+    }
 
+    public String validaPopup() {
+        Alert popup = driver.switchTo().alert();
+        String textoPopup = popup.getText();
+        popup.accept();
+        return textoPopup;
 
-}
+    }
 }
