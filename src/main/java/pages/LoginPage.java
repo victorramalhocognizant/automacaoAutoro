@@ -16,7 +16,7 @@ public class LoginPage {
     public LoginPage(WebDriver driver){
         this.driver = driver;
     }
-        public void openSite(){
+    public void openSite(){
         driver.get("https://demo.testfire.net/login.jsp");
     }
     public void loginUsuario(String keyword){
@@ -45,12 +45,9 @@ public class LoginPage {
         loginSenha("Demo1234");
         clickLogin();
     }
-         
-
-
-}
-public String getTextOnlineBankingLoginString(){
-  return driver.findElement(By.xpath(textoUsuarioIncorreto)).getText();
+        
+    public String getTextOnlineBankingLoginString(){
+     return driver.findElement(By.xpath(textoUsuarioIncorreto)).getText();
 
 }
 public String validaPopup(){

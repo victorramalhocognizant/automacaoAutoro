@@ -11,7 +11,7 @@ import io.cucumber.junit.CucumberOptions;
     glue = "steps",
     snippets = io.cucumber.junit.CucumberOptions.SnippetType.CAMELCASE,
 
-    tags = "@loginWithUserAndPasswordBlank",
+    tags = "@Personal",
 monochrome = true,
 dryRun = false
 )
