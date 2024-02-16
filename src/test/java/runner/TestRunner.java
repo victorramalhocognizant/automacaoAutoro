@@ -10,7 +10,7 @@ import io.cucumber.junit.CucumberOptions;
     features = "src/test/java/resources/features",
     glue = "steps",
     snippets = io.cucumber.junit.CucumberOptions.SnippetType.CAMELCASE,
-    tags = "@TransferCreditToCredit",
+    tags = "@Personal",
 monochrome = true,
 dryRun = false
 )
