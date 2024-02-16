@@ -17,10 +17,10 @@ public class LoginPage {
         driver.get("https://demo.testfire.net/login.jsp");
     }
     public void loginUsuario(String keyword){
-        driver.findElement(By.xpath(userName)).sendKeys("jsmith");
+        driver.findElement(By.xpath(userName)).sendKeys(keyword);
     }
     public void loginSenha(String keyword){
-        driver.findElement(By.xpath(passward)).sendKeys("Demo1234");
+        driver.findElement(By.xpath(passward)).sendKeys(keyword);
     }
     public void clickLogin(){
         driver.findElement(By.xpath(botaoLogin)).click();
