@@ -27,11 +27,17 @@ public class Hooks {
     public void setUp(Scenario scenario){
         driver = BrowserProvider.createDriver(Browser.CHROME);
         extent = ExtentManager.getInstance();
+        driver.manage().window().maximize();
         test = extent.createTest(scenario.getName(), scenario.getName());
     }
 
     @After
     public void tearDown(Scenario scenario){
+        if(scenario.isFailed()){
+            captureScreenshot("fail","final");
+        }else{
+            captureScreenshot("pass","final");
+        }
         extent.flush();
         driver.quit();
     }
