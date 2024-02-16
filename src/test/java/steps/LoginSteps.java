@@ -1,6 +1,5 @@
 package steps;
 
-
 import org.junit.Assert;
 
 import io.cucumber.java.en.Given;
@@ -32,25 +31,11 @@ public class LoginSteps {
     @When("I click on login button")
     public void ClickOnLoginButton() {
         loginPage.clickLogin();
-        //Hooks.captureScreenshot("pass", "I click on login button");
+        Hooks.captureScreenshot("pass", "I click on login button");
     }
     @Then("I should see the login page {string}")
     public void ShouldSeeTheLoginPage(String textoValidacao) {
        Assert.assertEquals(loginPage.getTextHelloJonhSmitString(),textoValidacao);
-      Hooks.captureScreenshot("pass", "I should see the login page");
+       Hooks.captureScreenshot("pass", "I should see the login page");
     }
-
-@Then("I should see the error message {string}")
-public void Errormessage(String textoValidacao) {
-   Assert.assertEquals(loginPage.getTextOnlineBankingLoginString(),textoValidacao);
-   Hooks.captureScreenshot("pass", "I should see the error message");
-}
-
-@Then("I should see the pop up {string}")
-public void ErroPopup(String textoValidacao) {
-Assert.assertEquals(loginPage.validaPopup(),textoValidacao);
-   Hooks.captureScreenshot("pass", "I should see the pop up");
-
-
-}
 }
