@@ -24,7 +24,7 @@ Feature: Login
         When I put the user name "jsmith"
 
         And  I click on login button
-        Then I should see the popup "You must enter a valid password"
+        Then I should see the pop up "You must enter a valid password"
 
 
 @loginIncorrectuser
