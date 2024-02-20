@@ -61,13 +61,7 @@ public void iClickOnOtherServices() {
     smallBussinesHome.clicarOtherServices();
     Hooks.captureScreenshot("pass", "I click on other services");
 }
-@Then("I should to return to main page")
-public void Ishouldtoreturntomainpage() {
-    
-    smallBussinesHome.validacaoAutoroMutualLogo();
-     assertTrue(smallBussinesHome.retornoAoMenu());
-        Hooks.captureScreenshot("pass", "I should to return to main page");
-    }
+
 }
 
 

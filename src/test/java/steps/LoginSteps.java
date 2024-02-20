@@ -33,7 +33,7 @@ public class LoginSteps {
     @When("I click on login button")
     public void ClickOnLoginButton() {
         loginPage.clickLogin();
-        Hooks.captureScreenshot("pass", "I click on login button");
+        //Hooks.captureScreenshot("pass", "I click on login button");
     }
 
     @Then("I should see the login page {string}")
