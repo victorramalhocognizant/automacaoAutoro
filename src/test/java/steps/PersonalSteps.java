@@ -2,8 +2,6 @@ package steps;
 
 import static org.junit.Assert.assertTrue;
 
-import org.openqa.selenium.By;
-
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -20,52 +18,53 @@ public class PersonalSteps {
         loginPage.openSite();
     }
 
-@When("I click on Btn Personal menu")
-public void btnPersonalMenu() {
-    personalPage.clicarBtnPersonal();
-        Hooks.captureScreenshot("pass", "I click on BtnPersonal menu");
+@When("I click on Personal and  I see the {string} page")
+public void btnPersonalMenu(String titulo) {
+        personalPage.clicarBtnPersonal();
+        assertTrue (personalPage.retornoPagina(titulo));
+        Hooks.captureScreenshot("pass", "I click on Personal menu and I see the Personal page");
 }
 
-@When("I click on Deposit Product")
-    public void depositProductt() {
+@When("I click on Deposit Product and  I see the {string} page")
+    public void depositProductt(String titulo) {
         personalPage.clicarBtnDeposito();
-        Hooks.captureScreenshot("pass", "I click on Deposit Product");
+        assertTrue (personalPage.retornoPagina(titulo));
+        Hooks.captureScreenshot("pass", "I click on Deposit Product and I see the Deposit Product page");
 }
 
-@When("I click on Checking")
-    public void clickOnChecking() {
+@When("I click on Checking and I see the {string} page")
+    public void clickOnChecking(String titulo) {
         personalPage.clicarBtnChecking();
-        Hooks.captureScreenshot("pass", "I click on transfer funds");
+        assertTrue (personalPage.retornoPagina(titulo));
+        Hooks.captureScreenshot("pass", "I click on Checking and I see the Checking page");
 }
 
-@When("I click on Loan Products")
-    public void clickLoanProduct() {
+@When("I click on Loan Products and I see the {string} page")
+    public void clickLoanProduct(String titulo) {
         personalPage.clicarBtnLoanProducts();
-        Hooks.captureScreenshot("pass", "I click on LoanProducts");
+        assertTrue (personalPage.retornoPagina(titulo));
+        Hooks.captureScreenshot("pass", "I I click on Loan Products and I see the Loan Products page");
 
 }  
-@When("I click on Cards")
-    public void clickOnCards() {
+@When("I click on Cards and I see the {string} page")
+    public void clickOnCards(String titulo) {
         personalPage.clicarBtnCards();
-        Hooks.captureScreenshot("pass", "I click on Cards");
+        assertTrue (personalPage.retornoPagina(titulo));
+        Hooks.captureScreenshot("pass", "I click on Cards and I see the Cards page");
 }
 
-@When("I click on Investments Insurance")
-    public void clickOnInvestmentsInsurance() {
+@When("I click on Investments Insurance and I see the {string} page")
+    public void clickOnInvestmentsInsurance(String titulo) {
         personalPage.clicarBtnInvestmentsInsurance();
-        Hooks.captureScreenshot("pass", "I click on InvestmentsInsurance");
+        assertTrue (personalPage.retornoPagina(titulo));
+        Hooks.captureScreenshot("pass", "I click on Investments Insurance and I see the Investments Insurance page");
 }
 
-@When("I click on Investments")
-    public void clickOnInvestments() {
-        personalPage.clicarBtnInvestments();
-        Hooks.captureScreenshot("pass", "I click on Investments");
-}
-
-@When("I click on Other Services")
-    public void clicarBtnOtherServices() {
+@When("I click on Other Services and I see the {string} page")
+    public void clicarBtnOtherServices(String titulo) {
         personalPage.clicarBtnOtherServices();
-        Hooks.captureScreenshot("pass", "I click on OtherServices");
+        assertTrue (personalPage.retornoPagina(titulo));
+        Hooks.captureScreenshot("pass", "I click on Other Services and I see the Other Services page");
 }
 
 @Then("I should to return to main page")

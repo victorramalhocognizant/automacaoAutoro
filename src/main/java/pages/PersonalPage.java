@@ -6,22 +6,22 @@ import org.openqa.selenium.WebDriver;
 public class PersonalPage {
    
     private WebDriver driver;
-    private String btnPersonal = "//*[@id=\"CatLink1\"]";
+    private String personal = "//*[@id=\"CatLink1\"]";
     private String depositProduct = "//*[@id=\"MenuHyperLink1\"]";
     private String checking = "//*[@id=\"MenuHyperLink2\"]";
     private String loanProducts = "//*[@id=\"MenuHyperLink3\"]";
     private String cards = "//*[@id=\"MenuHyperLink4\"]";
     private String investmentsInsurance = "//*[@id=\"MenuHyperLink5\"]";
-    private String investments = "//*[@id=\"MenuHyperLink6\"]";
     private String otherServices = "//*[@id=\"MenuHyperLink6\"]";
     private String validacaoRetornoMenu = "/html/body/table/tbody/tr[2]/td[2]/table/tbody/tr/td[1]/b[1]/a";
-    private String validacaoLogoSiteAutoro  = "//*[@id=\"HyperLink1\"]/img";
+    private String validacaoLogoSiteAutoro  = "//*[@id=\"HyperLink1\"]/img"; 
+    private String retornoPagina = "/html/body/table/tbody/tr[2]/td[2]/div[1]/h1";
 
     public PersonalPage(WebDriver driver){
         this.driver = driver;
     }
     public void clicarBtnPersonal(){
-        driver.findElement(By.xpath(btnPersonal)).click();
+        driver.findElement(By.xpath(personal)).click();
     }
     public void clicarBtnDeposito(){
         driver.findElement(By.xpath(depositProduct)).click();
@@ -38,9 +38,7 @@ public class PersonalPage {
     public void clicarBtnInvestmentsInsurance(){
         driver.findElement(By.xpath(investmentsInsurance)).click();
     }
-    public void clicarBtnInvestments(){
-        driver.findElement(By.xpath(investments)).click();
-    }
+    
     public void clicarBtnOtherServices(){
         driver.findElement(By.xpath(otherServices)).click();
 }
@@ -54,4 +52,8 @@ public class PersonalPage {
     public void validacaoLogoSiteAutoro(){
         driver.findElement(By.xpath(validacaoLogoSiteAutoro)).click();
 }
+    public Boolean retornoPagina (String titulo) {
+                return driver.findElement(By.xpath(retornoPagina)).getText().equals(titulo);
+}     
+
 }
