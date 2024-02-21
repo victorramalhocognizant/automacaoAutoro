@@ -6,8 +6,8 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 public class ExtentManager {
     private static ExtentReports extent;
 
-    public static ExtentReports getInstance(){
-        if(extent==null){
+    public static ExtentReports getInstance() {
+        if (extent == null) {
             extent = createInstance("extent.html");
         }
         return extent;

@@ -10,9 +10,8 @@
     features = "src/test/java/resources/features",
     glue = "steps",
     snippets = io.cucumber.junit.CucumberOptions.SnippetType.CAMELCASE,
-    tags = "@loginWithBlankPassword",
-monochrome = true,
-dryRun = false
+    monochrome = true,
+    dryRun = false
 )
 public class TestRunner {
     
